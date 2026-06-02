@@ -1,0 +1,260 @@
+/* ========================================
+   CSS VARIABLES
+======================================== */
+
+:root {
+    --Purple: hsl(257, 40%, 49%);
+    --Magenta: hsl(300, 69%, 71%);
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+body{
+    font-family: "Open Sans", sans-serif;
+    color: white;
+
+    background-color: var(--Purple);
+    background-image: url("./images/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+main{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    width: min(81.25rem, 90%);
+    margin-inline: auto;
+    padding-block: 3rem;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+h1{
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+p{
+    max-width: 55ch;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   TEXT SECTION
+======================================== */
+
+.text-content{
+    max-width: 34rem;
+}
+
+/* ========================================
+   IMAGES SECTION
+======================================== */
+
+.images-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Logo */
+
+.images-container > img:first-child{
+    width: 13.75rem;
+}
+
+/* Main illustration */
+
+.images-container > img:last-child{
+    width: min(43.75rem, 100%);
+}
+
+/* ========================================
+   CTA BUTTON
+======================================== */
+
+button{
+    border: none;
+    border-radius: 999rem;
+
+    padding: 1rem 4rem;
+
+    background-color: white;
+    color: var(--Purple);
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover{
+    background-color: var(--Magenta);
+    color: white;
+
+    transform: translateY(-0.125rem);
+
+    box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   SOCIAL ICONS
+   Desktop: bottom-right
+======================================== */
+
+.social-icons{
+    position: fixed;
+    right: 3rem;
+    bottom: 2rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a{
+    width: 2.625rem;
+    height: 2.625rem;
+
+    border: 0.0625rem solid white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-icons a:hover{
+    color: var(--Magenta);
+    border-color: var(--Magenta);
+    transform: translateY(-0.125rem);
+}
+
+/* ========================================
+   ATTRIBUTION
+======================================== */
+
+.attribution{
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}
+
+.attribution a{
+    color: white;
+    transition: color 0.25s ease;
+}
+
+.attribution a:hover{
+    color: var(--Magenta);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 56.25rem){
+
+    body{
+        background-image: url("./images/bg-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+    }
+
+    main{
+        flex-direction: column;
+        text-align: center;
+
+        width: min(90%, 35rem);
+
+        gap: 3rem;
+
+        padding-block: 2rem;
+    }
+
+    .images-container{
+        width: 100%;
+        gap: 3rem;
+    }
+
+    .images-container > img:first-child{
+        width: 10rem;
+    }
+
+    .images-container > img:last-child{
+        width: 100%;
+    }
+
+    .text-content{
+        max-width: 100%;
+    }
+
+    p{
+        max-width: 100%;
+    }
+
+    button{
+        margin-inline: auto;
+        padding: 0.9rem 5rem;
+    }
+
+    /* Move social icons below content */
+
+    .social-icons{
+        position: static;
+
+        justify-content: center;
+
+        margin-bottom: 1.5rem;
+    }
+}
