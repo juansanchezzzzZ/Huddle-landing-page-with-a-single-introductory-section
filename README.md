@@ -22,7 +22,7 @@ This project focuses on recreating a modern hero section using semantic HTML and
 
 ## Live Demo
 
-- Live Site: https://juansanchezzzzz.github.io/huddle-landing-page/
+- Live Site: [https://juansanchezzzzz.github.io/huddle-landing-page/](http://juansanchezzzzz.github.io/Huddle-landing-page-with-a-single-introductory-section/)
 - Frontend Mentor Challenge: https://www.frontendmentor.io/challenges/huddle-landing-page-with-single-introductory-section-pts4qJ4
 
 ---
